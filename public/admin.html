@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>后台管理</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,560&family=Karla:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body>
+  <!-- 登录界面 -->
+  <div id="login-view" class="login-card" hidden>
+    <h1>后台登录</h1>
+    <p>输入管理密码进入</p>
+    <form id="login-form">
+      <div class="field">
+        <label for="password">密码</label>
+        <input type="password" id="password" autocomplete="current-password" required />
+      </div>
+      <p class="error-text" id="login-error"></p>
+      <button type="submit" class="btn btn-primary" style="width:100%">登录</button>
+    </form>
+  </div>
+
+  <!-- 管理界面 -->
+  <div id="admin-view" class="admin-shell" hidden>
+    <div class="admin-header">
+      <h1>后台管理</h1>
+      <button class="btn btn-ghost" id="logout-btn">退出登录</button>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="profile">资料</button>
+      <button class="tab-btn" data-tab="links">子域名</button>
+    </div>
+
+    <!-- 资料面板 -->
+    <section class="panel active" id="panel-profile">
+      <form class="card-form" id="profile-form">
+        <div class="form-grid">
+          <div class="field full">
+            <label for="f-greeting">问候语</label>
+            <input type="text" id="f-greeting" placeholder="你好，很高兴你路过这里" />
+          </div>
+          <div class="field">
+            <label for="f-name">名字</label>
+            <input type="text" id="f-name" placeholder="你的名字" />
+          </div>
+          <div class="field">
+            <label for="f-avatar">头像图片链接</label>
+            <input type="text" id="f-avatar" placeholder="https://..." />
+          </div>
+          <div class="field full">
+            <label for="f-tagline">一句话介绍</label>
+            <input type="text" id="f-tagline" placeholder="在这里写一句最能代表你的话" />
+          </div>
+          <div class="field full">
+            <label for="f-bio">简介</label>
+            <textarea id="f-bio" placeholder="多写几句话介绍自己"></textarea>
+          </div>
+          <div class="field full">
+            <label for="f-hero-bg">首页背景图链接（可留空）</label>
+            <input type="text" id="f-hero-bg" placeholder="https://..." />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">保存资料</button>
+          <span class="save-hint" id="profile-hint"></span>
+        </div>
+      </form>
+    </section>
+
+    <!-- 子域名面板 -->
+    <section class="panel" id="panel-links">
+      <form class="card-form" id="link-form">
+        <input type="hidden" id="l-id" />
+        <div class="form-grid">
+          <div class="field">
+            <label for="l-name">名称</label>
+            <input type="text" id="l-name" placeholder="例如：博客" required />
+          </div>
+          <div class="field">
+            <label for="l-url">跳转链接</label>
+            <input type="text" id="l-url" placeholder="https://blog.example.com" required />
+          </div>
+          <div class="field full">
+            <label for="l-desc">简介</label>
+            <input type="text" id="l-desc" placeholder="一句话说说这是什么地方" />
+          </div>
+          <div class="field">
+            <label for="l-image">背景图片链接（可留空）</label>
+            <input type="text" id="l-image" placeholder="https://..." />
+          </div>
+          <div class="field">
+            <label for="l-order">排序号（越小越靠前）</label>
+            <input type="number" id="l-order" value="0" />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="link-submit-btn">添加子域名</button>
+          <button type="button" class="btn btn-ghost" id="link-cancel-btn" hidden>取消编辑</button>
+          <span class="save-hint" id="link-hint"></span>
+        </div>
+      </form>
+
+      <div id="link-list"></div>
+    </section>
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

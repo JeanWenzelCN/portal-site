@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>主页</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,560&family=Karla:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="avatar-wrap hidden" id="avatar-wrap">
+          <img class="avatar" id="avatar" src="" alt="头像" />
+        </div>
+        <p class="greeting" id="greeting"></p>
+        <h1 class="tagline" id="tagline"></h1>
+        <p class="bio" id="bio"></p>
+      </div>
+    </section>
+
+    <section class="spaces">
+      <div class="spaces-head">
+        <h2>我的其他角落</h2>
+        <p class="spaces-sub">点开看看，都是些还在打理的小地方</p>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <footer class="site-footer">
+      <span id="footer-text">© <span id="year"></span></span>
+    </footer>
+  </main>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

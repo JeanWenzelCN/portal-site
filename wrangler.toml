@@ -1,0 +1,16 @@
+name = "portal-site"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "public"
+
+# 在 Cloudflare Dashboard 的 Pages 项目设置里绑定 D1 / KV / 环境变量是最简单的方式。
+# 下面这份配置只在你想用 `wrangler pages dev` 做本地开发时才需要，
+# 把 database_id 和 KV 的 id 换成你自己创建出来的真实值。
+
+[[d1_databases]]
+binding = "DB"
+database_name = "portal_db"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+[[kv_namespaces]]
+binding = "SITE_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
